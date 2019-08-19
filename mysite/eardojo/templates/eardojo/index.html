@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'eardojo/style.css' %}">
+<h1>EarDojo</h1>
+{% if topic_list %}
+    <h2>Solfeo 101</h2>
+    <ul>
+    {% for topic in topic_list %}
+        <li><a href="{% url 'eardojo:detail' topic.id %}">{{ topic.topic_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No topics available</p>
+{% endif %}
+
+<h2>Solfeo 102</h2>
